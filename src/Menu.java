@@ -74,9 +74,34 @@ public class Menu {
 
         return (number<1)?-1 :  (number==1)?1 : number * ex4(number-1);
     }
+
+    public static long ex5(int number){
+        return (number<1)? -1 : (number==1)?0 : (number==2)? 1 : (ex4(number-2)+ex4(number-1));
+    }
+    public static double area(double radius){
+        System.out.println("The area of the circle: ");
+        return (radius<0)?-1 : Math.PI * Math.pow(radius,2);
+    }
+   // circulo A = π . r²
+    public static double area(double altura, double base){
+        System.out.println("The area of the rectangle: ");
+        return (altura<0 || base<0)?-1 : base*altura;
+    }
+    public static void feeCalculation(double fee, int payment) {
+        if (payment == 1) {
+            //calculation based on month
+            System.out.println("You need to pay " + fee / 12 + "every month");
+            if (payment == 2) {
+                //calculation based on month
+                System.out.println("You need to pay " + fee / 4 + "every quarter");
+            }
+        }
+    }
+    //retangulo altura*base
+
     //menu
 
-    static void menu() {
+    static void menu(){
         Scanner sn = new Scanner(System.in);
         boolean exit = false;
         do {
@@ -101,6 +126,10 @@ public class Menu {
                     for (int i=1;i<10;i+=1) {
                         System.out.println("Factorial " + i + " = " + ex4(i));
                     }
+                    break;
+                case 5:
+                    //area(5);
+                    //area(25,30);
                     break;
                 default:
                     System.out.println("Bye");
